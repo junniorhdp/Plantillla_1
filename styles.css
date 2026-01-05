@@ -390,7 +390,8 @@ footer,
   display: flex;
   justify-content: center;
   gap: 14px;
-  padding: 30px 0;
+  padding: 30px 16px;
+  flex-wrap: wrap;
 }
 
 .countdown div {
@@ -420,21 +421,33 @@ footer,
 
 
 .rapunzel-hero {
-  width: 190px;
-  max-width: 45vw;
-  margin: 0 auto 10px;
+  width: 220px;
+  max-width: 55vw;
+  margin: 0 auto 12px;
   display: block;
-
-  animation: rapunFloat 6s ease-in-out infinite;
-  filter: drop-shadow(0 12px 20px rgba(0,0,0,0.12));
 
   position: relative;
   z-index: 2;
 
-  animation: hairFloat 6.5s ease-in-out infinite;
+  animation: hairFloat 7s ease-in-out infinite;
   transform-origin: center bottom;
-  
+
+  /* MEJORAS DE CALIDAD */
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+  will-change: transform;
+
+  /* sombra más suave */
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,0.12));
 }
+
+@media (max-width: 480px) {
+  .rapunzel-hero {
+    width: 270px;
+    max-width: 80vw;
+  }
+}
+
 
 
 @keyframes rapunFloat {
